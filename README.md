@@ -8,9 +8,7 @@ LLMs increasingly hand you an HTML page instead of a Markdown file. Those pages
 are pleasant to read and impossible to give feedback on. This closes that gap
 without a server, an account, or a second tool.
 
-<video src="./commentable-html.mp4" controls width="720"></video>
-
-[commentable-html.mp4](./commentable-html.mp4) — walkthrough.
+https://github.com/user-attachments/assets/812266cc-d20c-402e-996e-e37c81754247
 
 ## Use it
 
