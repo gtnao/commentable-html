@@ -1,0 +1,32 @@
+/* The only rules injected into the host document's light DOM.
+ *
+ * They match a custom element name — ch-highlight — that no ordinary document
+ * styles, and the injector refuses to run if the source already uses it. So
+ * nothing here has to win a specificity fight: there is no rule to fight with.
+ * The attribute selector keeps us clear of a host's `body *` catch-all, which
+ * is the only realistic way a document could touch an element it has no name
+ * for. No !important anywhere.
+ *
+ * Everything else the reader sees lives in a shadow root, and the body gutter
+ * is applied as a runtime inline style that is stripped before saving.
+ */
+
+ch-highlight[data-ch-id] {
+  display: inline;
+  background-color: var(--ch-hl-bg, rgba(255, 196, 0, .32));
+  color: inherit;
+  font: inherit;
+  border-radius: 2px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  cursor: pointer;
+  transition: background-color .12s;
+}
+ch-highlight[data-ch-state="active"] {
+  background-color: var(--ch-hl-active, rgba(255, 168, 0, .62));
+  box-shadow: 0 0 0 1px var(--ch-accent, #b8860b);
+}
+ch-highlight[data-ch-state="draft"] {
+  background-color: var(--ch-hl-draft, rgba(120, 170, 255, .38));
+}
